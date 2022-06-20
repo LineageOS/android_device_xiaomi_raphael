@@ -26,6 +26,9 @@ PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
     libmegface
 
+# Kernel
+$(call inherit-product-if-exists, device/xiaomi/raphael-kernel/kernel.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
