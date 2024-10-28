@@ -19,6 +19,8 @@ from extract_utils.main import (
 blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/init.batterysecret.rc': blob_fixup()
         .regex_replace('.*seclabel u:r:batterysecret:s0\n', ''),
+    'vendor/etc/sensors/hals.conf': blob_fixup()
+        .add_line_if_missing('sensors.udfps.so'),
     'vendor/lib/hw/audio.primary.raphael.so': blob_fixup()
         .binary_regex_replace(
             b'/vendor/lib/liba2dpoffload.so',
