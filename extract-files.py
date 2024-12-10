@@ -29,6 +29,30 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     'vendor/lib64/camera/components/com.qti.node.watermark.so': blob_fixup()
         .add_needed('libpiex_shim.so'),
+    (
+        'vendor/lib64/libalLDC.so',
+        'vendor/lib64/libalAILDC.so',
+        'vendor/lib64/libalhLDC.so',
+    ): blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
+    (
+        'vendor/lib64/libarcsoft_dualcam_refocus_front.so',
+        'vendor/lib64/libarcsoft_dualcam_refocus_rear_t.so',
+        'vendor/lib64/libarcsoft_dualcam_refocus_rear_w.so',
+    ): blob_fixup()
+        .clear_symbol_version('remote_handle_close')
+        .clear_symbol_version('remote_handle_invoke')
+        .clear_symbol_version('remote_handle_open'),
+    'vendor/lib64/libhvx_proxy_stub.so': blob_fixup()
+        .clear_symbol_version('remote_handle64_close')
+        .clear_symbol_version('remote_handle64_invoke')
+        .clear_symbol_version('remote_handle64_open')
+        .clear_symbol_version('remote_register_dma_handle')
+        .clear_symbol_version('remote_register_dma_handle_attr'),
 }  # fmt: skip
 
 namespace_imports = [
