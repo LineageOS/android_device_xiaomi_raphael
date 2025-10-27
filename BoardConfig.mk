@@ -15,9 +15,6 @@ TARGET_OTA_ASSERT_DEVICE := raphael,raphaelin
 # Display
 TARGET_SCREEN_DENSITY := 440
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_raphael
-
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/xiaomi/raphael.config
 
