@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "527300fc_e92ed699",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20364
+      },
+      "writtenOn": "2026-02-12T17:36:54Z",
+      "side": 1,
+      "message": "Edited to keep it disabled by default as per commit message description.",
+      "revId": "3caa873c2f5b205ad3575a57443a6e19915aaef7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
