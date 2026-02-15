@@ -16,6 +16,24 @@
       "message": "Edited to keep it disabled by default as per commit message description.",
       "revId": "3caa873c2f5b205ad3575a57443a6e19915aaef7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbc2d877_beccbdb3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34612
+      },
+      "writtenOn": "2026-02-15T07:47:16Z",
+      "side": 1,
+      "message": "`config_screen_off_udfps_default_on` is already set to false in the framework.",
+      "parentUuid": "527300fc_e92ed699",
+      "revId": "3caa873c2f5b205ad3575a57443a6e19915aaef7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
