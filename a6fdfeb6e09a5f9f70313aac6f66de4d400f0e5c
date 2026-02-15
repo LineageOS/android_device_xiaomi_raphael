@@ -34,6 +34,24 @@
       "parentUuid": "bf167dee_5a6e642f",
       "revId": "a6fdfeb6e09a5f9f70313aac6f66de4d400f0e5c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3580085d_a7fc16f4",
+        "filename": "rro_overlays/FrameworkResOverlayDevice/res/values/dimens.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 34612
+      },
+      "writtenOn": "2026-02-15T12:01:13Z",
+      "side": 1,
+      "message": "84px looks good to me. Additionally, davinci ships with 84px and shares the same display dimensions. Could you please share a picture of the corners in light mode? 103px seems like a significant jump.",
+      "parentUuid": "3c85eeb4_261ac789",
+      "revId": "a6fdfeb6e09a5f9f70313aac6f66de4d400f0e5c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
