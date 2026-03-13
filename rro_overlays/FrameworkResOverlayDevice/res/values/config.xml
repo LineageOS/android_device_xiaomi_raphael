@@ -16,10 +16,31 @@
 
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds.  Do not translate. -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
+<resources>
+    <!-- Flag indicating whether we should enable the automatic brightness.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Note: This setting is deprecated, please use
+    config_screenBrightnessSettingMinimumFloat instead -->
+    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+
+    <!-- Note: This setting is deprecated, please use
+    config_screenBrightnessSettingDefaultFloat instead -->
+    <integer name="config_screenBrightnessSettingDefault">184</integer>
+
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
+
+    <!-- Screen brightness used to dim the screen when the user activity
+         timeout expires.  May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+    <integer name="config_screenBrightnessDim">6</integer>
 
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
@@ -61,8 +82,7 @@
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
-         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
-         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         in the config_autoBrightnessLevels array. The display brightness is defined as the measured
          brightness of an all-white image.
 
          If this is defined then:
@@ -92,6 +112,81 @@
         <item>409.2867</item>
         <item>427.6287</item>
     </array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>105</item>
+        <item>110</item>
+        <item>115</item>
+        <item>120</item>
+        <item>125</item>
+        <item>130</item>
+        <item>135</item>
+        <item>140</item>
+        <item>145</item>
+        <item>150</item>
+        <item>155</item>
+        <item>160</item>
+        <item>165</item>
+        <item>170</item>
+        <item>174</item>
+        <item>179</item>
+        <item>184</item>
+        <item>189</item>
+        <item>194</item>
+        <item>199</item>
+        <item>204</item>
+        <item>209</item>
+        <item>214</item>
+        <item>219</item>
+        <item>224</item>
+        <item>229</item>
+        <item>234</item>
+        <item>239</item>
+        <item>244</item>
+        <item>249</item>
+        <item>255</item>
+    </integer-array>
 
     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
          values in the config_screenBrightnessBacklight array.  On OLED displays these  values
@@ -171,79 +266,34 @@
         <item>427.6287</item>
     </array>
 
-    <!-- An array describing the screen's backlight values corresponding to the brightness
-         values in the config_screenBrightnessNits array.
+    <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
+         values by calculating the index to use for lookup and then setting the constraint value
+         to the corresponding value of the array. The new brightening hysteresis constraint value
+         is the n-th element of config_ambientBrighteningThresholds, and the new darkening
+         hysteresis constraint value is the n-th element of config_ambientDarkeningThresholds.
 
-         This array should be equal in size to config_screenBrightnessBacklight. -->
-    <integer-array name="config_screenBrightnessBacklight">
-        <item>0</item>
+         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
+         condition                       calculated index
+         value < level[0]                0
+         level[n] <= value < level[n+1]  n+1
+         level[MAX] <= value             MAX+1 -->
+    <integer-array name="config_ambientThresholdLevels">
         <item>1</item>
-        <item>2</item>
-        <item>3</item>
         <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
         <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
         <item>20</item>
-        <item>25</item>
-        <item>30</item>
-        <item>35</item>
         <item>40</item>
-        <item>45</item>
-        <item>50</item>
-        <item>55</item>
-        <item>60</item>
         <item>65</item>
-        <item>70</item>
-        <item>75</item>
-        <item>80</item>
-        <item>85</item>
-        <item>90</item>
         <item>95</item>
-        <item>100</item>
-        <item>105</item>
-        <item>110</item>
-        <item>115</item>
-        <item>120</item>
-        <item>125</item>
-        <item>130</item>
-        <item>135</item>
         <item>140</item>
-        <item>145</item>
-        <item>150</item>
-        <item>155</item>
-        <item>160</item>
-        <item>165</item>
-        <item>170</item>
-        <item>174</item>
-        <item>179</item>
-        <item>184</item>
-        <item>189</item>
-        <item>194</item>
-        <item>199</item>
-        <item>204</item>
-        <item>209</item>
-        <item>214</item>
-        <item>219</item>
-        <item>224</item>
-        <item>229</item>
-        <item>234</item>
-        <item>239</item>
-        <item>244</item>
-        <item>249</item>
-        <item>255</item>
+        <item>200</item>
+        <item>350</item>
+        <item>650</item>
+        <item>1300</item>
+        <item>2000</item>
+        <item>3300</item>
+        <item>6000</item>
+        <item>10000</item>
     </integer-array>
 
     <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
@@ -297,61 +347,6 @@
         <item>500</item>
         <item>500</item>
     </integer-array>
-
-    <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
-         values by calculating the index to use for lookup and then setting the constraint value
-         to the corresponding value of the array. The new brightening hysteresis constraint value
-         is the n-th element of config_ambientBrighteningThresholds, and the new darkening
-         hysteresis constraint value is the n-th element of config_ambientDarkeningThresholds.
-
-         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
-         condition                       calculated index
-         value < level[0]                0
-         level[n] <= value < level[n+1]  n+1
-         level[MAX] <= value             MAX+1 -->
-    <integer-array name="config_ambientThresholdLevels">
-        <item>1</item>
-        <item>4</item>
-        <item>12</item>
-        <item>20</item>
-        <item>40</item>
-        <item>65</item>
-        <item>95</item>
-        <item>140</item>
-        <item>200</item>
-        <item>350</item>
-        <item>650</item>
-        <item>1300</item>
-        <item>2000</item>
-        <item>3300</item>
-        <item>6000</item>
-        <item>10000</item>
-    </integer-array>
-
-    <!-- Screen brightness used to dim the screen when the user activity
-         timeout expires.  May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">6</integer>
-
-    <!-- Default screen brightness setting.
-         Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">184</integer>
-
-    <!-- Minimum screen brightness setting allowed by the power manager.
-         The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">2</integer>
-
-    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
-         for debouncing the light sensor.  Different constants are used to debounce the light sensor
-         when adapting to brighter or darker environments.  This parameter controls how quickly
-         brightness changes occur in response to an observed change in light level that exceeds the
-         hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
-
-    <!-- The maximum range of gamma adjustment possible using the screen
-         auto-brightness adjustment setting. -->
-    <fraction name="config_autoBrightnessAdjustmentMaxGamma">300%</fraction>
 
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
          For this time after the screen turns on, the Power Manager
