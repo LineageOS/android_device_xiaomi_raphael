@@ -39,6 +39,10 @@ PRODUCT_PACKAGES += \
 # Init
 $(call soong_config_set,xiaomi_msmnile,variant_lib,//$(LOCAL_PATH):libvariant_xiaomi_raphael)
 
+# NFC
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/nfc/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # Overlays
 PRODUCT_PACKAGES += \
     ApertureOverlayDevice \
