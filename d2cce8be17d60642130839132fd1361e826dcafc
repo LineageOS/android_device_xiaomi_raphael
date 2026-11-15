@@ -16,6 +16,24 @@
       "message": "This is the AIDL v2 upstream?",
       "revId": "d2cce8be17d60642130839132fd1361e826dcafc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb3dd742_42f01234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34612
+      },
+      "writtenOn": "2026-11-15T09:12:27Z",
+      "side": 1,
+      "message": "v1",
+      "parentUuid": "e9fe0dfc_d0bf376f",
+      "revId": "d2cce8be17d60642130839132fd1361e826dcafc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
