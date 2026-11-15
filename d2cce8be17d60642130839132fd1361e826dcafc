@@ -34,6 +34,24 @@
       "parentUuid": "e9fe0dfc_d0bf376f",
       "revId": "d2cce8be17d60642130839132fd1361e826dcafc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd37845e_9f0a19b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-11-15T10:55:39Z",
+      "side": 1,
+      "message": "We\u0027re using the v2 AIDL now, I\u0027d guess it doesn\u0027t differ that much, please check tho",
+      "parentUuid": "fb3dd742_42f01234",
+      "revId": "d2cce8be17d60642130839132fd1361e826dcafc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
