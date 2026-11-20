@@ -52,6 +52,24 @@
       "parentUuid": "fb3dd742_42f01234",
       "revId": "d2cce8be17d60642130839132fd1361e826dcafc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "649c3a48_9af9412c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34612
+      },
+      "writtenOn": "2026-11-20T13:46:16Z",
+      "side": 1,
+      "message": "There are some additions, not sure if they\u0027re relevant for our devices. I tested AIDL v2 with patchset 1 and it seems to work fine.",
+      "parentUuid": "bd37845e_9f0a19b8",
+      "revId": "d2cce8be17d60642130839132fd1361e826dcafc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
